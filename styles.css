@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(23, 0, 23);
+    height: 100vh;
+
+    display: flex;
+    /* Need to justify-content center if flex direction is col */
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0px;
+}
+
+.link {
+    /* Text structure */
+    color: aliceblue;
+    font-size: clamp(2em, 8vw, 7em);
+    font-family: "Open Sans";
+    text-decoration: none;
+
+    /* Positioning */
+    display: block;
+    padding: 1vw 4vw;
+    position: relative;
+
+    /* Bordering */
+    border-top: 1px solid aliceblue;
+}
+
+.link:before {
+    background: linear-gradient(
+        to right,
+        transparent,
+        lightcoral var(--gradient-percent),
+        deeppink
+    );
+    content: "";
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+}
+
+.link:hover {
+    color: lightcoral;
+}
+
+.link:hover:before {
+    transition: width 500ms ease;
+    width: 100%;
+}
+
+.link:nth-child(3) {
+    /* Used so borders don't double */
+    border-bottom: 1px solid aliceblue;
+}
